@@ -29,6 +29,24 @@ This document is the protocol's own guide and specification, in two parts:
 
 ---
 
+## Related specifications (from `nat-traversal-spec`)
+
+Alongside the narrative guide below, this repo also preserves the **more formal
+NAT-traversal specification** and its **network simulator**, archived from the separate
+`socketsupply/nat-traversal-spec` repository:
+
+- **[`SPEC.md`](./SPEC.md)** — the formal, implementer-facing NAT-traversal spec (RFC-style
+  `SHOULD`/`MUST`), with concrete constants (`LOCAL_PORT 3456`, `TEST_PORT 3457`, `BDP 10`,
+  `BDP_MAX_PACKETS 1000`, `KEEP_ALIVE_TIMEOUT 29_000`), data structures, and the full message
+  set (`MsgPing`, `MsgPong`, `MsgIntro`, `MsgLocal`, `MsgJoin`, `MsgRelay`, `MsgConnect`,
+  `MsgTest`). This is a **different, more detailed version** than the "P2P Spec" section of the
+  guide below (which uses `STATE_0`–`STATE_6`); keep both for the fuller picture.
+- **[`SIMULATOR.md`](./SIMULATOR.md)** — the deterministic network-simulator design used to test
+  the protocol (event queue, random message ordering, seeded replay).
+
+> Note: the upstream repo also had a `tla/index.tla` (TLA+ model) referenced by its README, but
+> that file is an **empty placeholder** upstream (0 bytes), so there was nothing to copy.
+
 ## P2P Guide
 
 Status: DRAFT
